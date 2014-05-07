@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="Second.Windows.TargetViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cam="clr-namespace:WebcamControl;assembly=WebcamControl"
+             mc:Ignorable="d" 
+             Background="LightGray"
+             Opacity=".9"
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="DevicesListTemplate">
+            <TextBlock Text="{Binding Name}"/>
+        </DataTemplate>
+    </UserControl.Resources>
+
+
+
+    <Grid>
+        <cam:Webcam Name="WebcamCtrl" Margin="0,10,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                    Height="200" Width="300"/>
+
+        <StackPanel Margin="2,0,10,28" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="22">
+                <TextBlock Height="22" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top"
+                           Text="Video Device" TextAlignment="Left" FlowDirection="LeftToRight" />
+                <ComboBox Height="22" Width="210" HorizontalAlignment="Left" VerticalAlignment="Top"
+                          x:Name="VideoDevicesComboBox" ItemTemplate="{StaticResource DevicesListTemplate}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="23" Margin="0,10,0,0">
+
+
+            </StackPanel>
+        </StackPanel>
+
+        <Grid Margin="45,0,185,88" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+
+
+            <Button Content="Stop" 
+                    Height="24" Width="112" 
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Top" 
+                    x:Name="StopCaptureButton" 
+                    Click="StopCaptureButton_Click" 
+                    Margin="0,75,-178,-75"/>
+
+            <Button Content="Start" 
+                    Height="24" 
+                    Width="115" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    x:Name="StartCaptureButton" 
+                    Click="StartCaptureButton_Click" Margin="-20,75,-25,-75"/>
+
+        </Grid>
+    </Grid>
+
+
+
+
+</UserControl>
