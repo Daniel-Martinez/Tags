@@ -20,20 +20,13 @@ namespace SADgui.ViewModels
     public class MainViewModel : ViewModelBase
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
-
         private MissileLauncherViewModel m_selectedLauncher;
-
         private GameServerViewModel m_selectedServer;
-
         private LauncherTypes m_selectedType;
-
         private GameServerType m_gameservertype;
-
         private TargetViewModel m_targetView;
         private string m_gameChoice;
         private double score = 0;
-
         private int timer = 0;
 
 
@@ -131,6 +124,7 @@ namespace SADgui.ViewModels
                 
             }
             Stop();
+            timer = 0;
 
         }
 
